@@ -65,8 +65,8 @@ _Local times in Cuernavaca, Mexico_
 * [GitHub source code](https://github.com/lcolladotor/rnaseq_LCG-UNAM_2022)
 * Zoom (ask)
 * [LCG-UNAM RStudio server](http://132.248.220.108:8787/)
-* [CDSB](https://comunidadbioinfo.github.io/)
-* [Slack CDSB Mexico](https://comunidadbioinfo.slack.com)
+* [CDSB](https://comunidadbioinfo.github.io/). 
+* [Slack CDSB Mexico](https://comunidadbioinfo.slack.com), in particular the [`intro_rnaseq_lcg_2022` channel](https://comunidadbioinfo.slack.com/archives/C031BNT0VUH). You can join this Slack workspace through [this link](https://join.slack.com/t/comunidadbioinfo/shared_invite/zt-8lsvpm84-Fne1W0hadk6cpjgJS17Tnw).
   
 
 ## Course Prerequisites {-}
