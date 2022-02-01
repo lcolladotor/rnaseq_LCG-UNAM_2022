@@ -187,7 +187,7 @@ Ahora ya estamos listos para continuar con el análisis de expresión diferencia
 ## Normalización de datos
 
 * Lean _A hypothetical scenario_ en uno de los artículos sobre `edgeR` https://genomebiology.biomedcentral.com/articles/10.1186/gb-2010-11-3-r25#Sec2 para entender un poco sobre el concepto de _composition bias_.
-* Sigue siendo relevante con datos de scRNA-seq como pueden ver en http://bioconductor.org/books/release/OSCA/normalization.html#normalization-by-deconvolution. Ahí descubren una serie de pasos para usar métodos desarrollados para bulk RNA-seq y como se pueden usar en scRNA-seq.
+* Sigue siendo relevante con datos de scRNA-seq como pueden ver en http://bioconductor.org/books/3.14/OSCA.multisample/multi-sample-comparisons.html#performing-the-de-analysis. Ahí descubren una serie de pasos para usar métodos desarrollados para bulk RNA-seq y como se pueden usar en scRNA-seq.
 
 
 ```{r normalize}
@@ -373,11 +373,11 @@ dev.off()
 
 * Con datos de algún estudio disponible vía `recount3`, hagan un análisis de expresión diferencial.
 * Incluyan al menos 3 gráficas en su reporte.
-* Su reporte debe ser público y estar listado en el [Google Sheet](https://docs.google.com/spreadsheets/d/1sOBAnPkN_mP_Tq6-a8TyO7T4ii_hRPLFlKXj4qJdfUs/edit?usp=sharing) del curso.
+* Su reporte debe ser público y estar listado en [la página del curso](https://cursos.lcg.unam.mx/course/view.php?id=123#section-3).
 
 Suena fácil, pero cada estudio tiene sus complejidades.
 
-Hay muchos paquetes que no vimos que les pueden llamar la atención, tal como `ideal`. En http://research.libd.org/SPEAQeasy-example/bootcamp_intro pueden encontrar varias gráficas que tal vez les quieran reproducir. En fin, ¡esto solo es el inicio!
+Hay muchos paquetes que no vimos que les pueden llamar la atención, tal como `r BiocStyle::Biocpkg("ideal")`. En http://research.libd.org/SPEAQeasy-example/bootcamp_intro pueden encontrar varias gráficas que tal vez les quieran reproducir. En fin, ¡esto solo es el inicio!
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">🎉🎉🎉Our new MS is finally out! Given the timing, Santa had an early round with us 🎅<br>💡<a href="https://t.co/a0dHFGWN7V">https://t.co/a0dHFGWN7V</a>, &quot;ideal: an R/Bioconductor package for interactive differential expression analysis&quot;.<br><br>I promise a proper <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a> hexsticker will follow, for now enjoy the package 😉</p>&mdash; Federico Marini (@FedeBioinfo) <a href="https://twitter.com/FedeBioinfo/status/1336944561592078336?ref_src=twsrc%5Etfw">December 10, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
