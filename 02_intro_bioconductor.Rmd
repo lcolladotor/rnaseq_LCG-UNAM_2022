@@ -36,7 +36,7 @@ Bioconductor, the R package repository for the “analysis and comprehension of 
     - Son 4 árboles principales: software, annotation, experiment, workflow
     - Dentro de cada árbol, un paquete puede ser parte de varias ramas
     - Tiene una búsqueda de texto simple
-    - Ejemplo: Software → WorkflowStep → Visualization → http://bioconductor.org/packages/release/BiocViews.html#___Visualization (486 paquetes en BioC 3.11 abril-octubre 2020, 506 en BioC 3.12 octubre 2020-abril 2021)
+    - Ejemplo: Software → WorkflowStep → Visualization → http://bioconductor.org/packages/release/BiocViews.html#___Visualization (486 paquetes en BioC 3.11 abril-octubre 2020, 506 en BioC 3.12 octubre 2020-abril 2021, 536 en BioC 3.14 octubre 2021-abril 2022)
 
 
 ## Estructura de un paquete de BioC
@@ -62,13 +62,13 @@ Bioconductor, the R package repository for the “analysis and comprehension of 
 ## Las dos ramas de Bioconductor: release y devel
 
 * Dos ramas
-    - `release`, actualmente 3.12
-    - `devel`, actualmente 3.13
+    - `release`, actualmente 3.14
+    - `devel`, actualmente 3.15
     - Ejemplo: http://bioconductor.org/packages/devel/bioc/html/recount.html
 * Bioconductor tiene es actualizado cada 6 meses (abril y octubre). R lo actualizan 1 vez al año (abril).
 * Todo el software lo prueban en macOS, Windows y linux
     - Ejemplo: http://bioconductor.org/checkResults/release/bioc-LATEST/recount/ y http://bioconductor.org/checkResults/devel/bioc-LATEST/recount/
-* Resumen BioC 3.12 http://bioconductor.org/news/bioc_3_12_release/
+* Resumen BioC 3.14 http://bioconductor.org/news/bioc_3_14_release/
     - Blog post en LIBD rstats club: Quick overview on the new Bioconductor 3.8 release http://research.libd.org/rstatsclub/2018/11/02/quick-overview-on-the-new-bioconductor-3-8-release/
 
 
@@ -76,12 +76,12 @@ Bioconductor, the R package repository for the “analysis and comprehension of 
 
 * http://bioconductor.org/help/events/
 * http://bioconductor.org/help/course-materials/
-* BioC2021: conferencia principal anual https://bioc2021.bioconductor.org/
+* BioC2022: conferencia principal anual https://bioc2022.bioconductor.org/
     - Talleres del BioC2019: https://rebrand.ly/biocworkshops2019
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Teach online data science, bioinformatics, or other computational skills interactively using the Orchestra platform:<a href="https://t.co/r4aJ2xAZbh">https://t.co/r4aJ2xAZbh</a> <br>Nearly 50 workshop environments preloaded with <a href="https://twitter.com/hashtag/jupyter?src=hash&amp;ref_src=twsrc%5Etfw">#jupyter</a>, <a href="https://twitter.com/hashtag/rstudio?src=hash&amp;ref_src=twsrc%5Etfw">#rstudio</a>, <a href="https://twitter.com/hashtag/shell?src=hash&amp;ref_src=twsrc%5Etfw">#shell</a>. <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a>, or <a href="https://twitter.com/hashtag/python?src=hash&amp;ref_src=twsrc%5Etfw">#python</a>.<a href="https://twitter.com/NIHSTRIDES?ref_src=twsrc%5Etfw">@NIHSTRIDES</a> <a href="https://twitter.com/NIHDataScience?ref_src=twsrc%5Etfw">@NIHDataScience</a> <a href="https://twitter.com/Bioconductor?ref_src=twsrc%5Etfw">@Bioconductor</a> <a href="https://t.co/HyWVLBJxGU">pic.twitter.com/HyWVLBJxGU</a></p>&mdash; Sean Davis (@seandavis12) <a href="https://twitter.com/seandavis12/status/1348291911090626560?ref_src=twsrc%5Etfw">January 10, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-* El que ayudo a organizar en México: CDSB Workshop 2020 https://comunidadbioinfo.github.io/post/cdsb2020-building-workflows-with-rstudio-and-scrnaseq-with-bioconductor/#.XmJT-Z-YU1I
+* El que ayudo a organizar en México: CDSB Workshop 2021 https://comunidadbioinfo.github.io/post/cdsb-2021-workshops/#.YflG7erMJD8
 
 
 
@@ -97,13 +97,15 @@ Bioconductor, the R package repository for the “analysis and comprehension of 
   
 ## Ejercicio grupal
 
-* Exploren en http://bioconductor.org/news/bioc_3_12_release/ la lista de nuevos paquetes de Bioconductor (BioC 3.12)
+* Exploren en http://bioconductor.org/news/bioc_3_14_release/ la lista de nuevos paquetes de Bioconductor (BioC 3.12)
 * Cada quien escoja un paquete o dos
 * Exploren la documentación del paquete, si es que está pasando las pruebas en los diferentes sistemas operativos, si es que lxs autores han respondido a las preguntas de lxs usuarixs, etc.
 * Discutan cuales paquetes les interesaron más como equipo y escriban un resumen de su discusión en sus notas en GitHub.
 * Ejemplo de una actividad similar:
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Today was different, so no video. We used breakout rooms to work in pairs &amp; highlight new <a href="https://twitter.com/Bioconductor?ref_src=twsrc%5Etfw">@Bioconductor</a> 3.12 📦s in a spreadsheet, then we chatted about them<a href="https://t.co/GDVDmGshIr">https://t.co/GDVDmGshIr</a><br><br>125 new software 📦s + much more! Lots of new toys to look at!<a href="https://t.co/C4qXfrQMm7">https://t.co/C4qXfrQMm7</a><a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a> <a href="https://t.co/niGUP6Tns8">pic.twitter.com/niGUP6Tns8</a></p>&mdash; LIBD rstats club (@LIBDrstats) <a href="https://twitter.com/LIBDrstats/status/1324861604488503300?ref_src=twsrc%5Etfw">November 6, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">At the end of October we did a &quot;<a href="https://twitter.com/Bioconductor?ref_src=twsrc%5Etfw">@Bioconductor</a> 3.14 release overview&quot; led by <a href="https://twitter.com/lcolladotor?ref_src=twsrc%5Etfw">@lcolladotor</a><br><br>There&#39;s lots of new interesting packages out there! <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a><br><br>📔 <a href="https://t.co/PAfcnAGN9a">https://t.co/PAfcnAGN9a</a><br>📹 <a href="https://t.co/w8o8BxoBBo">https://t.co/w8o8BxoBBo</a></p>&mdash; LIBD rstats club (@LIBDrstats) <a href="https://twitter.com/LIBDrstats/status/1466104192682975232?ref_src=twsrc%5Etfw">December 1, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 * (Opcional) Escriban un tweet promocionando el paquete que más les gustó y etiqueten a lxs autores si es que están en Twitter. Está plática de Mara Averick para `rstudio::conf(2018)` explica cómo comunicar información vía tweets https://rstudio.com/resources/rstudioconf-2018/phrasing-communicating-data-science-through-tweets-gifs-and-classic-misdirection/.
 
