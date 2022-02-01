@@ -1,4 +1,4 @@
-## ----install, eval = FALSE------------------------------------------------------------------------------------------
+## ----install, eval = FALSE-------------------------------------------------------------------------------
 ## ## For installing Bioconductor packages
 ## if (!requireNamespace("BiocManager", quietly = TRUE)) {
 ##     install.packages("BiocManager")
@@ -10,8 +10,8 @@
 ##         "usethis", ## Utilities
 ##         "here",
 ##         "biocthis",
+##         "lobstr",
 ##         "postcards",
-##         "pryr",
 ##         "sessioninfo",
 ##         "SummarizedExperiment", ## Main containers / vis
 ##         "iSEE",
@@ -28,7 +28,7 @@
 ## )
 
 
-## ----session_packages, eval = TRUE, message = FALSE-----------------------------------------------------------------
+## ----session_packages, eval = TRUE, message = FALSE------------------------------------------------------
 ## Load the package at the top of your script
 library("sessioninfo")
 
@@ -36,8 +36,8 @@ library("sessioninfo")
 library("BiocStyle")
 library("biocthis")
 library("here")
+library("lobstr")
 library("postcards")
-library("pryr")
 library("usethis")
 library("sessioninfo")
 
@@ -61,7 +61,7 @@ library("RColorBrewer")
 library("spatialLIBD")
 
 
-## ----session_info---------------------------------------------------------------------------------------------------
+## ----session_info----------------------------------------------------------------------------------------
 ## Reproducibility information
 options(width = 120)
 session_info()

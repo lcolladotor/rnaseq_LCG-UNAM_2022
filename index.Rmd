@@ -85,8 +85,8 @@ BiocManager::install(
         "usethis", ## Utilities
         "here",
         "biocthis",
+        "lobstr",
         "postcards",
-        "pryr",
         "sessioninfo",
         "SummarizedExperiment", ## Main containers / vis
         "iSEE",
@@ -135,8 +135,8 @@ library("sessioninfo")
 library("BiocStyle")
 library("biocthis")
 library("here")
+library("lobstr")
 library("postcards")
-library("pryr")
 library("usethis")
 library("sessioninfo")
 
