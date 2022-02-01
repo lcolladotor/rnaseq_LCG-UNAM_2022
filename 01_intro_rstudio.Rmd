@@ -31,7 +31,7 @@
   - https://github.com/ComunidadBioInfo/cdsb2020/blob/master/presentaciones_flujos-de-trabajo/Introduccion-al-flujo-de-trabajo-orientado-a-proyectos.pdf
 * Puedes tener páginas web estáticas
   - https://pages.github.com/
-  - https://github.com/lcolladotor/rnaseq_LCG-UNAM_2021. En especial https://github.com/lcolladotor/rnaseq_LCG-UNAM_2021/tree/gh-pages se convierte en http://lcolladotor.github.io/rnaseq_LCG-UNAM_2021/
+  - https://github.com/lcolladotor/rnaseq_LCG-UNAM_2022. En especial https://github.com/lcolladotor/rnaseq_LCG-UNAM_2022/tree/gh-pages se convierte en http://lcolladotor.github.io/rnaseq_LCG-UNAM_2022/
   - Página personal: https://github.com/lcolladotor/lcolladotor.github.com se convierte en http://lcolladotor.github.io/. Está todo hecho con https://github.com/lcolladotor/lcolladotorsource
 * Tip: usen el mismo nombre de usuario en GitHub, Twitter, Gmail, etc. 
   - How to be a Modern Scientist: https://lcolladotor.github.io/bioc_team_ds/how-to-be-a-modern-scientist.html
@@ -110,11 +110,16 @@ library("ggplot2")
 ## Hello world
 print("Soy Leo")
 
-## Crear directorio para las figuras
-dir.create(here::here("figuras"), showWarnings = FALSE)
+## Directorios
+dir_plots <- here::here("figuras")
+dir_rdata <- here::here("processed-data")
+
+## Crear directorio para las figuras y archivos
+dir.create(dir_plots, showWarnings = FALSE)
+dir.create(dir_rdata, showWarnings = FALSE)
 
 ## Hacer una imagen de ejemplo
-pdf(here::here("figuras", "mtcars_gear_vs_mpg.pdf"),
+pdf(file.path(dir_plots, "mtcars_gear_vs_mpg.pdf"),
     useDingbats = FALSE
 )
 ggplot(mtcars, aes(group = gear, y = mpg)) +
@@ -126,6 +131,7 @@ options(width = 120)
 sessioninfo::session_info()
 ```
 
+* Para una guía más detallada de cómo organizar tus archivos, revisa https://lcolladotor.github.io/bioc_team_ds/organizing-your-work.html#.YflDV-rMJD8. 
 
 * Configura `usethis` con GitHub vía https://usethis.r-lib.org/articles/articles/git-credentials.html
 
@@ -134,13 +140,20 @@ sessioninfo::session_info()
 usethis::create_github_token() ## Abrirá una página web, escoje un nombre único
 ## y luego da click en el botón verde al final. Después copia el token
 ## (son 40 caracteres)
+```
+
+* Para Mac o Windows:
+
+```{r gitcreds_set, eval = FALSE}
 gitcreds::gitcreds_set() ## Ojo, copia el token, no tu password de git!
 ## Si no, terminaras en la situación descrita en
 ## https://github.com/r-lib/usethis/issues/1347
 ```
 
+* Para Linux:
 
-En el servidor de [RStudio de la LCG-UNAM](http://132.248.220.108:8787/) no funciona bien `gitcreds::gitcreds_set()` así que tenemos que editar el archivo `.Renviron` donde nuestro token no se guarda de forma privada, y por lo cual hoy en día no es lo que recomienda [Jenny Bryan](https://twitter.com/JennyBryan). Pero es lo que funciona en este caso tal como lo hablamos con el autor de [`gitcreds` vía GitHub](https://github.com/r-lib/gitcreds/issues/29). Usando el siguiente comando podemos abrir el archivo `.Renviron`.
+En el servidor de [RStudio de la LCG-UNAM](http://132.248.220.108:8787/) no funciona bien `gitcreds::gitcreds_set()` (porque esa función solo corre bien en macOS o winOS) así que tenemos que editar el archivo `.Renviron` donde nuestro token no se guarda de forma privada, y por lo cual hoy en día no es lo que recomienda [Jenny Bryan](https://twitter.com/JennyBryan). Pero es lo que funciona en este caso tal como lo hablamos con el autor de [`gitcreds` vía GitHub](https://github.com/r-lib/gitcreds/issues/29). Usando el siguiente comando podemos abrir el archivo `.Renviron`.
+
 
 ```{r edit_r_envir, eval = FALSE}
 usethis::edit_r_environ()
@@ -154,6 +167,8 @@ GITHUB_PAT=TU_CLAVE_DE_40_LETRAS
 ```
 
 Después de guardar el `.Renviron`, vayan a `Session` hasta arriba y reinicien la sesión de R para que se cargue el `.Renviron` antes de continuar.
+
+* Continuemos con tu configuración de GitHub
 
 ```{r use_git_cont, eval = FALSE}
 ## Configura tu usuario de GitHub
@@ -171,21 +186,21 @@ usethis::use_github()
 
 Resultado ejemplo: https://github.com/lcolladotor/rnaseq_2021_notas. El que hice en vivo está disponible vía https://github.com/lcolladotor/rnaseq_2021_notas_en_vivo.
 
-Una vez que termines, agrega la liga al repositorio con tus notas del curso en el [Google Sheet](https://docs.google.com/spreadsheets/d/1sOBAnPkN_mP_Tq6-a8TyO7T4ii_hRPLFlKXj4qJdfUs/edit?usp=sharing) del curso. (De ser necesario, pide permisos para editar el archivo.)
+Una vez que termines, agrega la liga al repositorio con tus notas del curso en el [TBD]() del curso.
 
 ## Material del curso
 
-* Pueden descargar la versión estática con `usethis::use_course('lcolladotor/rnaseq_LCG-UNAM_2021')`
-* Pueden verlo en línea a través de  [**lcolladotor.github.io/rnaseq_LCG-UNAM_2021**](http://lcolladotor.github.io/rnaseq_LCG-UNAM_2021)
+* Pueden descargar la versión estática con `usethis::use_course('lcolladotor/rnaseq_LCG-UNAM_2022')`
+* Pueden verlo en línea a través de  [**lcolladotor.github.io/rnaseq_LCG-UNAM_2022**](http://lcolladotor.github.io/rnaseq_LCG-UNAM_2022)
 * Pueden **clonarlo** desde GitHub de tal forma que podrán actualizarlo fácilmente usando *git pull*
 
 ```{bash clone_course, eval = FALSE}
-git clone https://github.com/lcolladotor/rnaseq_LCG-UNAM_2021.git
+git clone https://github.com/lcolladotor/rnaseq_LCG-UNAM_2022.git
 
 ## Si tienen su SSH key configurarda pueden usar
 ## Info sobre SSH keys de GitHub: 
 ## https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
-git clone git@github.com:lcolladotor/rnaseq_LCG-UNAM_2021.git
+git clone git@github.com:lcolladotor/rnaseq_LCG-UNAM_2022.git
 ```
 
 O desde R con:
@@ -194,19 +209,26 @@ O desde R con:
 ## Opción más nueva:
 library("gert")
 repo <- git_clone(
-    "https://github.com/lcolladotor/rnaseq_LCG-UNAM_2021",
-    "~/rnaseq_LCG-UNAM_2021"
+    "https://github.com/lcolladotor/rnaseq_LCG-UNAM_2022",
+    "~/rnaseq_LCG-UNAM_2022"
 )
 setwd(repo)
 
 ## Otra opción:
 git2r::clone(
-    "https://github.com/lcolladotor/rnaseq_LCG-UNAM_2021",
-    "~/rnaseq_LCG-UNAM_20210"
+    "https://github.com/lcolladotor/rnaseq_LCG-UNAM_2022",
+    "~/rnaseq_LCG-UNAM_2022"
 )
 ```
 
-## Ejercicio postcards
+## Actividad postcards (opcional)
+
+<iframe class="speakerdeck-iframe" frameborder="0" src="https://speakerdeck.com/player/b7d3bbee06d14a548a664e76ea9110d8" title="Updating spatialLIBD: from SingleCellExperiment to VisiumExperiment classes" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 40px; width: 560px; height: 420px;" data-ratio="1.3333333333333333"></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Q6eRD8Nyxfk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0S_tRne5UNk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
 * Similar a https://pages.github.com/
 * `postcards` tiene 4 templados de páginas web https://github.com/seankross/postcards
@@ -214,6 +236,9 @@ git2r::clone(
   - Ejemplo https://amy-peterson.github.io/ vía https://github.com/amy-peterson/amy-peterson.github.com
   - http://jtleek.com/ vía https://github.com/jtleek/jtleek.github.io
   - http://aejaffe.com/ vía https://github.com/andrewejaffe/andrewejaffe.github.io
+  - https://hadley.nz/ vía https://github.com/hadley/hadley.github.com
+  - https://emarquezz.github.io/ vía https://github.com/emarquezz/emarquezz.github.io
+  - https://bpardo99.github.io/ vía https://github.com/bpardo99/bpardo99.github.io
 
 
 ```{r postcards_proj, eval = FALSE}
@@ -239,7 +264,7 @@ postcards::create_postcard(template = "onofre")
 * Agreguen sus perfiles estilo https://github.com/andrewejaffe/andrewejaffe.github.io/blob/master/index.Rmd#L7-L12
 * Den click en el botón azul de `knit` en RStudio. Es equivalente a `rmarkdown::render("index.Rmd")`. Esto creará el archivo `index.html`.
 * Hagan un `commit` para guardar los archivos nuevos incluyendo `index.html` y luego un `push` para subir los archivos a GitHub.
-* Agreguen su repositorio a nuestra [tabla con su información](https://docs.google.com/spreadsheets/d/1sOBAnPkN_mP_Tq6-a8TyO7T4ii_hRPLFlKXj4qJdfUs/edit?usp=sharing).
-* (opcional) Anuncien su nueva página web en Twitter usando el hashtag `#rstats` y/o etiquen al autor de `postcards` https://twitter.com/seankross. Pueden después incluir su página web en su introducción en el canal `#bienvenida` del Slack de la CDSB ^^.
+* Comparte tu repositorio vía el Slack de la CDSB en el canal [`intro_rnaseq_lcg_2022`](https://comunidadbioinfo.slack.com/archives/C031BNT0VUH).
+* (opcional) Anuncien su nueva página web en Twitter usando el hashtag `#rstats` y/o etiquen al autor de `postcards` https://twitter.com/seankross. Pueden después incluir su página web en su introducción en el canal `#bienvenida` del Slack de la CDSB ^^ al cual pueden unirse a través de  [esta liga](https://join.slack.com/t/comunidadbioinfo/shared_invite/zt-8lsvpm84-Fne1W0hadk6cpjgJS17Tnw).
 
 
