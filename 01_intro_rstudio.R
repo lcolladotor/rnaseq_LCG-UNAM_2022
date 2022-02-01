@@ -1,4 +1,4 @@
-## ----install_rsthemes, eval = FALSE-------------------------------------------------------------------------------------------
+## ----install_rsthemes, eval = FALSE---------------------------------------------------------------------------------
 ## remotes::install_github(c(
 ##     "gadenbuie/rsthemes"
 ## ))
@@ -6,7 +6,7 @@
 ## rsthemes::install_rsthemes(include_base16 = TRUE)
 
 
-## ----r_profile, eval = FALSE--------------------------------------------------------------------------------------------------
+## ----r_profile, eval = FALSE----------------------------------------------------------------------------------------
 ## usethis::edit_r_profile()
 ## 
 ## ## From https://www.garrickadenbuie.com/project/rsthemes/
@@ -32,21 +32,21 @@
 ## options(repos = c(CRAN = "https://cloud.r-project.org"))
 
 
-## ----proj, eval = FALSE-------------------------------------------------------------------------------------------------------
+## ----proj, eval = FALSE---------------------------------------------------------------------------------------------
 ## usethis::create_project("~/rnaseq_2021_notas")
 
 
-## ----create_setup, eval = FALSE-----------------------------------------------------------------------------------------------
+## ----create_setup, eval = FALSE-------------------------------------------------------------------------------------
 ## ## Start a setup file
 ## usethis::use_r("01-notas.R")
 
 
-## ----create_01-visualizar-mtcars, eval = FALSE--------------------------------------------------------------------------------
+## ----create_01-visualizar-mtcars, eval = FALSE----------------------------------------------------------------------
 ## ## Creemos el archivo R/01-visualizar-mtcars.R
 ## usethis::use_r("01-visualizar-mtcars.R")
 
 
-## ----vis_mtcars, eval = FALSE-------------------------------------------------------------------------------------------------
+## ----vis_mtcars, eval = FALSE---------------------------------------------------------------------------------------
 ## library("sessioninfo")
 ## library("here")
 ## library("ggplot2")
@@ -54,11 +54,16 @@
 ## ## Hello world
 ## print("Soy Leo")
 ## 
-## ## Crear directorio para las figuras
-## dir.create(here::here("figuras"), showWarnings = FALSE)
+## ## Directorios
+## dir_plots <- here::here("figuras")
+## dir_rdata <- here::here("processed-data")
+## 
+## ## Crear directorio para las figuras y archivos
+## dir.create(dir_plots, showWarnings = FALSE)
+## dir.create(dir_rdata, showWarnings = FALSE)
 ## 
 ## ## Hacer una imagen de ejemplo
-## pdf(here::here("figuras", "mtcars_gear_vs_mpg.pdf"),
+## pdf(file.path(dir_plots, "mtcars_gear_vs_mpg.pdf"),
 ##     useDingbats = FALSE
 ## )
 ## ggplot(mtcars, aes(group = gear, y = mpg)) +
@@ -70,21 +75,24 @@
 ## sessioninfo::session_info()
 
 
-## ----use_git_init, eval = FALSE-----------------------------------------------------------------------------------------------
+## ----use_git_init, eval = FALSE-------------------------------------------------------------------------------------
 ## ## Para poder conectar tu compu con GitHub
 ## usethis::create_github_token() ## Abrirá una página web, escoje un nombre único
 ## ## y luego da click en el botón verde al final. Después copia el token
 ## ## (son 40 caracteres)
+
+
+## ----gitcreds_set, eval = FALSE-------------------------------------------------------------------------------------
 ## gitcreds::gitcreds_set() ## Ojo, copia el token, no tu password de git!
 ## ## Si no, terminaras en la situación descrita en
 ## ## https://github.com/r-lib/usethis/issues/1347
 
 
-## ----edit_r_envir, eval = FALSE-----------------------------------------------------------------------------------------------
+## ----edit_r_envir, eval = FALSE-------------------------------------------------------------------------------------
 ## usethis::edit_r_environ()
 
 
-## ----use_git_cont, eval = FALSE-----------------------------------------------------------------------------------------------
+## ----use_git_cont, eval = FALSE-------------------------------------------------------------------------------------
 ## ## Configura tu usuario de GitHub
 ## usethis::edit_git_config()
 ## # [user]
@@ -98,7 +106,7 @@
 ## usethis::use_github()
 
 
-## git clone https://github.com/lcolladotor/rnaseq_LCG-UNAM_2021.git
+## git clone https://github.com/lcolladotor/rnaseq_LCG-UNAM_2022.git
 
 ## 
 ## ## Si tienen su SSH key configurarda pueden usar
@@ -107,26 +115,26 @@
 
 ## ## https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
 
-## git clone git@github.com:lcolladotor/rnaseq_LCG-UNAM_2021.git
+## git clone git@github.com:lcolladotor/rnaseq_LCG-UNAM_2022.git
 
 
-## ----clone_repo, eval = FALSE-------------------------------------------------------------------------------------------------
+## ----clone_repo, eval = FALSE---------------------------------------------------------------------------------------
 ## ## Opción más nueva:
 ## library("gert")
 ## repo <- git_clone(
-##     "https://github.com/lcolladotor/rnaseq_LCG-UNAM_2021",
-##     "~/rnaseq_LCG-UNAM_2021"
+##     "https://github.com/lcolladotor/rnaseq_LCG-UNAM_2022",
+##     "~/rnaseq_LCG-UNAM_2022"
 ## )
 ## setwd(repo)
 ## 
 ## ## Otra opción:
 ## git2r::clone(
-##     "https://github.com/lcolladotor/rnaseq_LCG-UNAM_2021",
-##     "~/rnaseq_LCG-UNAM_20210"
+##     "https://github.com/lcolladotor/rnaseq_LCG-UNAM_2022",
+##     "~/rnaseq_LCG-UNAM_2022"
 ## )
 
 
-## ----postcards_proj, eval = FALSE---------------------------------------------------------------------------------------------
+## ----postcards_proj, eval = FALSE-----------------------------------------------------------------------------------
 ## ## Creen el RStudio project
 ## usethis::create_project("Su_Usuario.github.io")
 ## 
@@ -135,7 +143,7 @@
 ## usethis::use_github()
 
 
-## ----postcards_create, eval = FALSE-------------------------------------------------------------------------------------------
+## ----postcards_create, eval = FALSE---------------------------------------------------------------------------------
 ## ## Solo uno de estos, de acurdo al templado que más les gustó
 ## postcards::create_postcard(template = "jolla")
 ## postcards::create_postcard(template = "jolla-blue")

@@ -76,8 +76,8 @@ Install R 4.1.x from [CRAN](https://cran.r-project.org/) then install the follow
 ```{r install, eval = FALSE}
 ## For installing Bioconductor packages
 if (!requireNamespace("BiocManager", quietly = TRUE)) {
-      install.packages("BiocManager")
-  }
+    install.packages("BiocManager")
+}
 
 ## Install required packages
 BiocManager::install(
@@ -88,20 +88,16 @@ BiocManager::install(
         "postcards",
         "pryr",
         "sessioninfo",
-
         "SummarizedExperiment", ## Main containers / vis
         "iSEE",
-
         "edgeR", ## RNA-seq
         "ExploreModelMatrix",
         "limma",
         "recount3",
-
         "pheatmap", ## Visualization
         "ggplot2",
         "patchwork",
         "RColorBrewer",
-
         "spatialLIBD" ## Advanced
     )
 )
