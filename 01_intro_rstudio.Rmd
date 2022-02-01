@@ -176,13 +176,19 @@ Después de guardar el `.Renviron`, vayan a `Session` hasta arriba y reinicien l
 
 * Continuemos con tu configuración de GitHub
 
-```{r use_git_cont, eval = FALSE}
+
+```{r use_git_cont_parte1, eval = FALSE}
 ## Configura tu usuario de GitHub
 usethis::edit_git_config()
-# [user]
-# 	name = Leonardo Collado Torres
-# 	email = lcolladotor@gmail.com
+```
 
+```
+[user]
+	name = Leonardo Collado Torres
+	email = lcolladotor@gmail.com
+```
+
+```{r use_git_cont_parte2, eval = FALSE}
 ## Para inicializar el repositorio de Git
 usethis::use_git()
 
