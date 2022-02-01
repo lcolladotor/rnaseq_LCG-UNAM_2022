@@ -291,8 +291,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Install R 4.1.x from <a href="https://cran.r-project.org/">CRAN</a> then install the following R packages:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">## For installing Bioconductor packages</span></span>
 <span id="cb1-2"><a href="index.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">&quot;BiocManager&quot;</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>)) {</span>
-<span id="cb1-3"><a href="index.html#cb1-3" aria-hidden="true" tabindex="-1"></a>      <span class="fu">install.packages</span>(<span class="st">&quot;BiocManager&quot;</span>)</span>
-<span id="cb1-4"><a href="index.html#cb1-4" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-3"><a href="index.html#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">install.packages</span>(<span class="st">&quot;BiocManager&quot;</span>)</span>
+<span id="cb1-4"><a href="index.html#cb1-4" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb1-5"><a href="index.html#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-6"><a href="index.html#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="do">## Install required packages</span></span>
 <span id="cb1-7"><a href="index.html#cb1-7" aria-hidden="true" tabindex="-1"></a>BiocManager<span class="sc">::</span><span class="fu">install</span>(</span>
@@ -303,23 +303,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-12"><a href="index.html#cb1-12" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;postcards&quot;</span>,</span>
 <span id="cb1-13"><a href="index.html#cb1-13" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;pryr&quot;</span>,</span>
 <span id="cb1-14"><a href="index.html#cb1-14" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;sessioninfo&quot;</span>,</span>
-<span id="cb1-15"><a href="index.html#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-16"><a href="index.html#cb1-16" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;SummarizedExperiment&quot;</span>, <span class="do">## Main containers / vis</span></span>
-<span id="cb1-17"><a href="index.html#cb1-17" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;iSEE&quot;</span>,</span>
-<span id="cb1-18"><a href="index.html#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-19"><a href="index.html#cb1-19" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;edgeR&quot;</span>, <span class="do">## RNA-seq</span></span>
-<span id="cb1-20"><a href="index.html#cb1-20" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;ExploreModelMatrix&quot;</span>,</span>
-<span id="cb1-21"><a href="index.html#cb1-21" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;limma&quot;</span>,</span>
-<span id="cb1-22"><a href="index.html#cb1-22" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;recount3&quot;</span>,</span>
-<span id="cb1-23"><a href="index.html#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-24"><a href="index.html#cb1-24" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;pheatmap&quot;</span>, <span class="do">## Visualization</span></span>
-<span id="cb1-25"><a href="index.html#cb1-25" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;ggplot2&quot;</span>,</span>
-<span id="cb1-26"><a href="index.html#cb1-26" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;patchwork&quot;</span>,</span>
-<span id="cb1-27"><a href="index.html#cb1-27" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;RColorBrewer&quot;</span>,</span>
-<span id="cb1-28"><a href="index.html#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-29"><a href="index.html#cb1-29" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;spatialLIBD&quot;</span> <span class="do">## Advanced</span></span>
-<span id="cb1-30"><a href="index.html#cb1-30" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb1-31"><a href="index.html#cb1-31" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<span id="cb1-15"><a href="index.html#cb1-15" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;SummarizedExperiment&quot;</span>, <span class="do">## Main containers / vis</span></span>
+<span id="cb1-16"><a href="index.html#cb1-16" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;iSEE&quot;</span>,</span>
+<span id="cb1-17"><a href="index.html#cb1-17" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;edgeR&quot;</span>, <span class="do">## RNA-seq</span></span>
+<span id="cb1-18"><a href="index.html#cb1-18" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;ExploreModelMatrix&quot;</span>,</span>
+<span id="cb1-19"><a href="index.html#cb1-19" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;limma&quot;</span>,</span>
+<span id="cb1-20"><a href="index.html#cb1-20" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;recount3&quot;</span>,</span>
+<span id="cb1-21"><a href="index.html#cb1-21" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;pheatmap&quot;</span>, <span class="do">## Visualization</span></span>
+<span id="cb1-22"><a href="index.html#cb1-22" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;ggplot2&quot;</span>,</span>
+<span id="cb1-23"><a href="index.html#cb1-23" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;patchwork&quot;</span>,</span>
+<span id="cb1-24"><a href="index.html#cb1-24" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;RColorBrewer&quot;</span>,</span>
+<span id="cb1-25"><a href="index.html#cb1-25" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;spatialLIBD&quot;</span> <span class="do">## Advanced</span></span>
+<span id="cb1-26"><a href="index.html#cb1-26" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb1-27"><a href="index.html#cb1-27" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 <p>You will also need to install <a href="https://rstudio.com/products/rstudio/download/#download">RStudio</a> version 2021.09 or newer.</p>
 </div>
 <div id="course-evaluation" class="section level2 unnumbered">
@@ -604,8 +600,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────</code></pre>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="index.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">proc.time</span>()</span></code></pre></div>
 <pre><code>##    user  system elapsed 
-##  17.792   0.890  18.654</code></pre>
-<p>This book was last updated at 2022-02-01 14:47:33.</p>
+##  16.621   0.788  17.391</code></pre>
+<p>This book was last updated at 2022-02-01 14:48:09.</p>
 </div>
 <div id="license" class="section level2 unnumbered">
 <h2>License</h2>
