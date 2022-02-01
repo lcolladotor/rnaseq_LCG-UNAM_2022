@@ -149,7 +149,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.2" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html#github"><i class="fa fa-check"></i><b>1.2</b> GitHub</a></li>
 <li class="chapter" data-level="1.3" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html#rstudio"><i class="fa fa-check"></i><b>1.3</b> RStudio</a></li>
 <li class="chapter" data-level="1.4" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html#material-del-curso"><i class="fa fa-check"></i><b>1.4</b> Material del curso</a></li>
-<li class="chapter" data-level="1.5" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html#ejercicio-postcards"><i class="fa fa-check"></i><b>1.5</b> Ejercicio postcards</a></li>
+<li class="chapter" data-level="1.5" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html#actividad-postcards-opcional"><i class="fa fa-check"></i><b>1.5</b> Actividad postcards (opcional)</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="introducción-a-bioconductor.html"><a href="introducción-a-bioconductor.html"><i class="fa fa-check"></i><b>2</b> Introducción a Bioconductor</a>
 <ul>
@@ -231,13 +231,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>¿Por qué es importante el argumento <code>coef</code> en <code>topTable()</code>?</li>
 </ul>
 <p>Usemos los datos de <a href="http://research.libd.org/SPEAQeasy-example/bootcamp_intro" class="uri">http://research.libd.org/SPEAQeasy-example/bootcamp_intro</a></p>
-<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="revisión.html#cb169-1" aria-hidden="true" tabindex="-1"></a>speaqeasy_data <span class="ot">&lt;-</span> <span class="fu">file.path</span>(<span class="fu">tempdir</span>(), <span class="st">&quot;rse_speaqeasy.RData&quot;</span>)</span>
-<span id="cb169-2"><a href="revisión.html#cb169-2" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(<span class="st">&quot;https://github.com/LieberInstitute/SPEAQeasy-example/blob/master/rse_speaqeasy.RData?raw=true&quot;</span>, speaqeasy_data, <span class="at">mode =</span> <span class="st">&quot;wb&quot;</span>)</span>
-<span id="cb169-3"><a href="revisión.html#cb169-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;SummarizedExperiment&quot;</span>)</span>
-<span id="cb169-4"><a href="revisión.html#cb169-4" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(speaqeasy_data, <span class="at">verbose =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="revisión.html#cb170-1" aria-hidden="true" tabindex="-1"></a>speaqeasy_data <span class="ot">&lt;-</span> <span class="fu">file.path</span>(<span class="fu">tempdir</span>(), <span class="st">&quot;rse_speaqeasy.RData&quot;</span>)</span>
+<span id="cb170-2"><a href="revisión.html#cb170-2" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(<span class="st">&quot;https://github.com/LieberInstitute/SPEAQeasy-example/blob/master/rse_speaqeasy.RData?raw=true&quot;</span>, speaqeasy_data, <span class="at">mode =</span> <span class="st">&quot;wb&quot;</span>)</span>
+<span id="cb170-3"><a href="revisión.html#cb170-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;SummarizedExperiment&quot;</span>)</span>
+<span id="cb170-4"><a href="revisión.html#cb170-4" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(speaqeasy_data, <span class="at">verbose =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## Loading objects:
 ##   rse_gene</code></pre>
-<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="revisión.html#cb171-1" aria-hidden="true" tabindex="-1"></a>rse_gene</span></code></pre></div>
+<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="revisión.html#cb172-1" aria-hidden="true" tabindex="-1"></a>rse_gene</span></code></pre></div>
 <pre><code>## class: RangedSummarizedExperiment 
 ## dim: 60609 40 
 ## metadata(0):
@@ -259,20 +259,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="respuestas" class="section level2" number="6.2">
 <h2><span class="header-section-number">6.2</span> Respuestas</h2>
-<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="revisión.html#cb173-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Exploremos la variable de PrimaryDx</span></span>
-<span id="cb173-2"><a href="revisión.html#cb173-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(rse_gene<span class="sc">$</span>PrimaryDx)</span></code></pre></div>
+<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="revisión.html#cb174-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Exploremos la variable de PrimaryDx</span></span>
+<span id="cb174-2"><a href="revisión.html#cb174-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(rse_gene<span class="sc">$</span>PrimaryDx)</span></code></pre></div>
 <pre><code>## 
 ## Bipolar Control   Other 
 ##      20      20       0</code></pre>
-<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="revisión.html#cb175-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Eliminemos el diagnosis &quot;Other&quot; porque no tiene información</span></span>
-<span id="cb175-2"><a href="revisión.html#cb175-2" aria-hidden="true" tabindex="-1"></a>rse_gene<span class="sc">$</span>PrimaryDx <span class="ot">&lt;-</span> <span class="fu">droplevels</span>(rse_gene<span class="sc">$</span>PrimaryDx)</span>
-<span id="cb175-3"><a href="revisión.html#cb175-3" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(rse_gene<span class="sc">$</span>PrimaryDx)</span></code></pre></div>
+<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="revisión.html#cb176-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Eliminemos el diagnosis &quot;Other&quot; porque no tiene información</span></span>
+<span id="cb176-2"><a href="revisión.html#cb176-2" aria-hidden="true" tabindex="-1"></a>rse_gene<span class="sc">$</span>PrimaryDx <span class="ot">&lt;-</span> <span class="fu">droplevels</span>(rse_gene<span class="sc">$</span>PrimaryDx)</span>
+<span id="cb176-3"><a href="revisión.html#cb176-3" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(rse_gene<span class="sc">$</span>PrimaryDx)</span></code></pre></div>
 <pre><code>## 
 ## Bipolar Control 
 ##      20      20</code></pre>
-<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="revisión.html#cb177-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Exploremos numéricamente diferencias entre grupos de diagnosis para</span></span>
-<span id="cb177-2"><a href="revisión.html#cb177-2" aria-hidden="true" tabindex="-1"></a><span class="do">## varias variables</span></span>
-<span id="cb177-3"><a href="revisión.html#cb177-3" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(<span class="fu">colData</span>(rse_gene), <span class="fu">tapply</span>(totalAssignedGene, PrimaryDx, summary))</span></code></pre></div>
+<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="revisión.html#cb178-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Exploremos numéricamente diferencias entre grupos de diagnosis para</span></span>
+<span id="cb178-2"><a href="revisión.html#cb178-2" aria-hidden="true" tabindex="-1"></a><span class="do">## varias variables</span></span>
+<span id="cb178-3"><a href="revisión.html#cb178-3" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(<span class="fu">colData</span>(rse_gene), <span class="fu">tapply</span>(totalAssignedGene, PrimaryDx, summary))</span></code></pre></div>
 <pre><code>## $Bipolar
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 ## 0.09529 0.24454 0.29773 0.28867 0.34662 0.38358 
@@ -280,7 +280,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## $Control
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 ##  0.1384  0.2575  0.2895  0.2984  0.3537  0.4073</code></pre>
-<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="revisión.html#cb179-1" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(<span class="fu">colData</span>(rse_gene), <span class="fu">tapply</span>(mitoRate, PrimaryDx, summary))</span></code></pre></div>
+<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="revisión.html#cb180-1" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(<span class="fu">colData</span>(rse_gene), <span class="fu">tapply</span>(mitoRate, PrimaryDx, summary))</span></code></pre></div>
 <pre><code>## $Bipolar
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 ## 0.01297 0.01555 0.01735 0.01818 0.01980 0.03019 
@@ -288,8 +288,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## $Control
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 ## 0.01194 0.01564 0.01911 0.02029 0.02439 0.03037</code></pre>
-<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="revisión.html#cb181-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Podemos hacer lo mismo para otras variables</span></span>
-<span id="cb181-2"><a href="revisión.html#cb181-2" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(<span class="fu">colData</span>(rse_gene), <span class="fu">tapply</span>(mitoRate, BrainRegion, summary))</span></code></pre></div>
+<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="revisión.html#cb182-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Podemos hacer lo mismo para otras variables</span></span>
+<span id="cb182-2"><a href="revisión.html#cb182-2" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(<span class="fu">colData</span>(rse_gene), <span class="fu">tapply</span>(mitoRate, BrainRegion, summary))</span></code></pre></div>
 <pre><code>## $Amygdala
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 ## 0.01302 0.01706 0.02029 0.02097 0.02437 0.03037 
@@ -297,39 +297,39 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## $sACC
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 ## 0.01194 0.01449 0.01686 0.01749 0.01836 0.03019</code></pre>
-<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="revisión.html#cb183-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Podemos resolver la primeras preguntas con iSEE</span></span>
-<span id="cb183-2"><a href="revisión.html#cb183-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">interactive</span>()) iSEE<span class="sc">::</span><span class="fu">iSEE</span>(rse_gene)</span>
-<span id="cb183-3"><a href="revisión.html#cb183-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb183-4"><a href="revisión.html#cb183-4" aria-hidden="true" tabindex="-1"></a><span class="do">## O hacer graficas nosotros mismos. Aquí les muestro una posible respuesta</span></span>
-<span id="cb183-5"><a href="revisión.html#cb183-5" aria-hidden="true" tabindex="-1"></a><span class="do">## con ggplot2</span></span>
-<span id="cb183-6"><a href="revisión.html#cb183-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;ggplot2&quot;</span>)</span>
-<span id="cb183-7"><a href="revisión.html#cb183-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(</span>
-<span id="cb183-8"><a href="revisión.html#cb183-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">as.data.frame</span>(<span class="fu">colData</span>(rse_gene)),</span>
-<span id="cb183-9"><a href="revisión.html#cb183-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">y =</span> totalAssignedGene, <span class="at">group =</span> PrimaryDx, <span class="at">x =</span> PrimaryDx)</span>
-<span id="cb183-10"><a href="revisión.html#cb183-10" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
-<span id="cb183-11"><a href="revisión.html#cb183-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb183-12"><a href="revisión.html#cb183-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">20</span>) <span class="sc">+</span></span>
-<span id="cb183-13"><a href="revisión.html#cb183-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">xlab</span>(<span class="st">&quot;Diagnosis&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="revisión.html#cb184-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Podemos resolver la primeras preguntas con iSEE</span></span>
+<span id="cb184-2"><a href="revisión.html#cb184-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">interactive</span>()) iSEE<span class="sc">::</span><span class="fu">iSEE</span>(rse_gene)</span>
+<span id="cb184-3"><a href="revisión.html#cb184-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb184-4"><a href="revisión.html#cb184-4" aria-hidden="true" tabindex="-1"></a><span class="do">## O hacer graficas nosotros mismos. Aquí les muestro una posible respuesta</span></span>
+<span id="cb184-5"><a href="revisión.html#cb184-5" aria-hidden="true" tabindex="-1"></a><span class="do">## con ggplot2</span></span>
+<span id="cb184-6"><a href="revisión.html#cb184-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;ggplot2&quot;</span>)</span>
+<span id="cb184-7"><a href="revisión.html#cb184-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(</span>
+<span id="cb184-8"><a href="revisión.html#cb184-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">as.data.frame</span>(<span class="fu">colData</span>(rse_gene)),</span>
+<span id="cb184-9"><a href="revisión.html#cb184-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">y =</span> totalAssignedGene, <span class="at">group =</span> PrimaryDx, <span class="at">x =</span> PrimaryDx)</span>
+<span id="cb184-10"><a href="revisión.html#cb184-10" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
+<span id="cb184-11"><a href="revisión.html#cb184-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb184-12"><a href="revisión.html#cb184-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">20</span>) <span class="sc">+</span></span>
+<span id="cb184-13"><a href="revisión.html#cb184-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">xlab</span>(<span class="st">&quot;Diagnosis&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/respuestas-1.png" width="672" /></p>
-<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="revisión.html#cb184-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(</span>
-<span id="cb184-2"><a href="revisión.html#cb184-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">as.data.frame</span>(<span class="fu">colData</span>(rse_gene)),</span>
-<span id="cb184-3"><a href="revisión.html#cb184-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">y =</span> mitoRate, <span class="at">group =</span> PrimaryDx, <span class="at">x =</span> PrimaryDx)</span>
-<span id="cb184-4"><a href="revisión.html#cb184-4" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
-<span id="cb184-5"><a href="revisión.html#cb184-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb184-6"><a href="revisión.html#cb184-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">20</span>) <span class="sc">+</span></span>
-<span id="cb184-7"><a href="revisión.html#cb184-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">xlab</span>(<span class="st">&quot;Diagnosis&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="revisión.html#cb185-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(</span>
+<span id="cb185-2"><a href="revisión.html#cb185-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">as.data.frame</span>(<span class="fu">colData</span>(rse_gene)),</span>
+<span id="cb185-3"><a href="revisión.html#cb185-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">y =</span> mitoRate, <span class="at">group =</span> PrimaryDx, <span class="at">x =</span> PrimaryDx)</span>
+<span id="cb185-4"><a href="revisión.html#cb185-4" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
+<span id="cb185-5"><a href="revisión.html#cb185-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb185-6"><a href="revisión.html#cb185-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">20</span>) <span class="sc">+</span></span>
+<span id="cb185-7"><a href="revisión.html#cb185-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">xlab</span>(<span class="st">&quot;Diagnosis&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/respuestas-2.png" width="672" /></p>
-<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="revisión.html#cb185-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Otras variables</span></span>
-<span id="cb185-2"><a href="revisión.html#cb185-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(</span>
-<span id="cb185-3"><a href="revisión.html#cb185-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">as.data.frame</span>(<span class="fu">colData</span>(rse_gene)),</span>
-<span id="cb185-4"><a href="revisión.html#cb185-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">y =</span> mitoRate, <span class="at">group =</span> BrainRegion, <span class="at">x =</span> BrainRegion)</span>
-<span id="cb185-5"><a href="revisión.html#cb185-5" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
-<span id="cb185-6"><a href="revisión.html#cb185-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb185-7"><a href="revisión.html#cb185-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">20</span>) <span class="sc">+</span></span>
-<span id="cb185-8"><a href="revisión.html#cb185-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">xlab</span>(<span class="st">&quot;Brain Region&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="revisión.html#cb186-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Otras variables</span></span>
+<span id="cb186-2"><a href="revisión.html#cb186-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(</span>
+<span id="cb186-3"><a href="revisión.html#cb186-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">as.data.frame</span>(<span class="fu">colData</span>(rse_gene)),</span>
+<span id="cb186-4"><a href="revisión.html#cb186-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">y =</span> mitoRate, <span class="at">group =</span> BrainRegion, <span class="at">x =</span> BrainRegion)</span>
+<span id="cb186-5"><a href="revisión.html#cb186-5" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
+<span id="cb186-6"><a href="revisión.html#cb186-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb186-7"><a href="revisión.html#cb186-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">20</span>) <span class="sc">+</span></span>
+<span id="cb186-8"><a href="revisión.html#cb186-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">xlab</span>(<span class="st">&quot;Brain Region&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/respuestas-3.png" width="672" /></p>
-<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="revisión.html#cb186-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Encontremos el gene SNAP25</span></span>
-<span id="cb186-2"><a href="revisión.html#cb186-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rowRanges</span>(rse_gene)</span></code></pre></div>
+<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="revisión.html#cb187-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Encontremos el gene SNAP25</span></span>
+<span id="cb187-2"><a href="revisión.html#cb187-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rowRanges</span>(rse_gene)</span></code></pre></div>
 <pre><code>## GRanges object with 60609 ranges and 10 metadata columns:
 ##                     seqnames      ranges strand |    Length         gencodeID       ensemblID              gene_type
 ##                        &lt;Rle&gt;   &lt;IRanges&gt;  &lt;Rle&gt; | &lt;integer&gt;       &lt;character&gt;     &lt;character&gt;            &lt;character&gt;
@@ -359,35 +359,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##   ENSG00000210196.2       MT-TP      &lt;NA&gt;       InGen  366.58138         1      ENST00000387461.2
 ##   -------
 ##   seqinfo: 25 sequences from an unspecified genome; no seqlengths</code></pre>
-<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="revisión.html#cb188-1" aria-hidden="true" tabindex="-1"></a><span class="do">## En este objeto los nombres de los genes vienen en la variable &quot;Symbol&quot;</span></span>
-<span id="cb188-2"><a href="revisión.html#cb188-2" aria-hidden="true" tabindex="-1"></a>i <span class="ot">&lt;-</span> <span class="fu">which</span>(<span class="fu">rowRanges</span>(rse_gene)<span class="sc">$</span>Symbol <span class="sc">==</span> <span class="st">&quot;SNAP25&quot;</span>)</span>
-<span id="cb188-3"><a href="revisión.html#cb188-3" aria-hidden="true" tabindex="-1"></a>i</span></code></pre></div>
+<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="revisión.html#cb189-1" aria-hidden="true" tabindex="-1"></a><span class="do">## En este objeto los nombres de los genes vienen en la variable &quot;Symbol&quot;</span></span>
+<span id="cb189-2"><a href="revisión.html#cb189-2" aria-hidden="true" tabindex="-1"></a>i <span class="ot">&lt;-</span> <span class="fu">which</span>(<span class="fu">rowRanges</span>(rse_gene)<span class="sc">$</span>Symbol <span class="sc">==</span> <span class="st">&quot;SNAP25&quot;</span>)</span>
+<span id="cb189-3"><a href="revisión.html#cb189-3" aria-hidden="true" tabindex="-1"></a>i</span></code></pre></div>
 <pre><code>## [1] 54098</code></pre>
-<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="revisión.html#cb190-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Para graficar con ggplot2, hagamos un pequeño data.frame</span></span>
-<span id="cb190-2"><a href="revisión.html#cb190-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb190-3"><a href="revisión.html#cb190-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">expression =</span> <span class="fu">assay</span>(rse_gene)[i, ],</span>
-<span id="cb190-4"><a href="revisión.html#cb190-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">Dx =</span> rse_gene<span class="sc">$</span>PrimaryDx</span>
-<span id="cb190-5"><a href="revisión.html#cb190-5" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb190-6"><a href="revisión.html#cb190-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb190-7"><a href="revisión.html#cb190-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Ya teniendo el pequeño data.frame, podemos hacer la gráfica</span></span>
-<span id="cb190-8"><a href="revisión.html#cb190-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">y =</span> <span class="fu">log2</span>(expression <span class="sc">+</span> <span class="fl">0.5</span>), <span class="at">group =</span> Dx, <span class="at">x =</span> Dx)) <span class="sc">+</span></span>
-<span id="cb190-9"><a href="revisión.html#cb190-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb190-10"><a href="revisión.html#cb190-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">20</span>) <span class="sc">+</span></span>
-<span id="cb190-11"><a href="revisión.html#cb190-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">xlab</span>(<span class="st">&quot;Diagnosis&quot;</span>) <span class="sc">+</span></span>
-<span id="cb190-12"><a href="revisión.html#cb190-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ylab</span>(<span class="st">&quot;SNAP25: log2(x + 0.5)&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="revisión.html#cb191-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Para graficar con ggplot2, hagamos un pequeño data.frame</span></span>
+<span id="cb191-2"><a href="revisión.html#cb191-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb191-3"><a href="revisión.html#cb191-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">expression =</span> <span class="fu">assay</span>(rse_gene)[i, ],</span>
+<span id="cb191-4"><a href="revisión.html#cb191-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">Dx =</span> rse_gene<span class="sc">$</span>PrimaryDx</span>
+<span id="cb191-5"><a href="revisión.html#cb191-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb191-6"><a href="revisión.html#cb191-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb191-7"><a href="revisión.html#cb191-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Ya teniendo el pequeño data.frame, podemos hacer la gráfica</span></span>
+<span id="cb191-8"><a href="revisión.html#cb191-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">y =</span> <span class="fu">log2</span>(expression <span class="sc">+</span> <span class="fl">0.5</span>), <span class="at">group =</span> Dx, <span class="at">x =</span> Dx)) <span class="sc">+</span></span>
+<span id="cb191-9"><a href="revisión.html#cb191-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb191-10"><a href="revisión.html#cb191-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">20</span>) <span class="sc">+</span></span>
+<span id="cb191-11"><a href="revisión.html#cb191-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">xlab</span>(<span class="st">&quot;Diagnosis&quot;</span>) <span class="sc">+</span></span>
+<span id="cb191-12"><a href="revisión.html#cb191-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ylab</span>(<span class="st">&quot;SNAP25: log2(x + 0.5)&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/respuestas-4.png" width="672" /></p>
-<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="revisión.html#cb191-1" aria-hidden="true" tabindex="-1"></a><span class="do">## https://bioconductor.org/packages/release/bioc/vignettes/scater/inst/doc/overview.html#3_Visualizing_expression_values</span></span>
-<span id="cb191-2"><a href="revisión.html#cb191-2" aria-hidden="true" tabindex="-1"></a>scater<span class="sc">::</span><span class="fu">plotExpression</span>(</span>
-<span id="cb191-3"><a href="revisión.html#cb191-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">as</span>(rse_gene, <span class="st">&quot;SingleCellExperiment&quot;</span>),</span>
-<span id="cb191-4"><a href="revisión.html#cb191-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">features =</span> <span class="fu">rownames</span>(rse_gene)[i],</span>
-<span id="cb191-5"><a href="revisión.html#cb191-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;PrimaryDx&quot;</span>,</span>
-<span id="cb191-6"><a href="revisión.html#cb191-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">exprs_values =</span> <span class="st">&quot;counts&quot;</span>,</span>
-<span id="cb191-7"><a href="revisión.html#cb191-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">colour_by =</span> <span class="st">&quot;BrainRegion&quot;</span>,</span>
-<span id="cb191-8"><a href="revisión.html#cb191-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">xlab =</span> <span class="st">&quot;Diagnosis&quot;</span></span>
-<span id="cb191-9"><a href="revisión.html#cb191-9" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="revisión.html#cb192-1" aria-hidden="true" tabindex="-1"></a><span class="do">## https://bioconductor.org/packages/release/bioc/vignettes/scater/inst/doc/overview.html#3_Visualizing_expression_values</span></span>
+<span id="cb192-2"><a href="revisión.html#cb192-2" aria-hidden="true" tabindex="-1"></a>scater<span class="sc">::</span><span class="fu">plotExpression</span>(</span>
+<span id="cb192-3"><a href="revisión.html#cb192-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">as</span>(rse_gene, <span class="st">&quot;SingleCellExperiment&quot;</span>),</span>
+<span id="cb192-4"><a href="revisión.html#cb192-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">features =</span> <span class="fu">rownames</span>(rse_gene)[i],</span>
+<span id="cb192-5"><a href="revisión.html#cb192-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;PrimaryDx&quot;</span>,</span>
+<span id="cb192-6"><a href="revisión.html#cb192-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">exprs_values =</span> <span class="st">&quot;counts&quot;</span>,</span>
+<span id="cb192-7"><a href="revisión.html#cb192-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">colour_by =</span> <span class="st">&quot;BrainRegion&quot;</span>,</span>
+<span id="cb192-8"><a href="revisión.html#cb192-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">xlab =</span> <span class="st">&quot;Diagnosis&quot;</span></span>
+<span id="cb192-9"><a href="revisión.html#cb192-9" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/respuestas-5.png" width="672" /></p>
-<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="revisión.html#cb192-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Para el model estadístico exploremos la información de las muestras</span></span>
-<span id="cb192-2"><a href="revisión.html#cb192-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(<span class="fu">colData</span>(rse_gene))</span></code></pre></div>
+<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="revisión.html#cb193-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Para el model estadístico exploremos la información de las muestras</span></span>
+<span id="cb193-2"><a href="revisión.html#cb193-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(<span class="fu">colData</span>(rse_gene))</span></code></pre></div>
 <pre><code>##  [1] &quot;SAMPLE_ID&quot;                          &quot;FQCbasicStats&quot;                      &quot;perBaseQual&quot;                       
 ##  [4] &quot;perTileQual&quot;                        &quot;perSeqQual&quot;                         &quot;perBaseContent&quot;                    
 ##  [7] &quot;GCcontent&quot;                          &quot;Ncontent&quot;                           &quot;SeqLengthDist&quot;                     
@@ -411,49 +411,49 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [61] &quot;rRNA_rate&quot;                          &quot;BrainRegion&quot;                        &quot;Race&quot;                              
 ## [64] &quot;PrimaryDx&quot;                          &quot;Sex&quot;                                &quot;AgeDeath&quot;                          
 ## [67] &quot;BrNum&quot;</code></pre>
-<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="revisión.html#cb194-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Podemos usar región del cerebro porque tenemos suficientes datos</span></span>
-<span id="cb194-2"><a href="revisión.html#cb194-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(rse_gene<span class="sc">$</span>BrainRegion)</span></code></pre></div>
+<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="revisión.html#cb195-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Podemos usar región del cerebro porque tenemos suficientes datos</span></span>
+<span id="cb195-2"><a href="revisión.html#cb195-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(rse_gene<span class="sc">$</span>BrainRegion)</span></code></pre></div>
 <pre><code>## 
 ## Amygdala     sACC 
 ##       20       20</code></pre>
-<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="revisión.html#cb196-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Pero no podemos usar &quot;Race&quot; porque son solo de 1 tipo</span></span>
-<span id="cb196-2"><a href="revisión.html#cb196-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(rse_gene<span class="sc">$</span>Race)</span></code></pre></div>
+<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb197-1"><a href="revisión.html#cb197-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Pero no podemos usar &quot;Race&quot; porque son solo de 1 tipo</span></span>
+<span id="cb197-2"><a href="revisión.html#cb197-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(rse_gene<span class="sc">$</span>Race)</span></code></pre></div>
 <pre><code>## 
 ## CAUC 
 ##   40</code></pre>
-<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="revisión.html#cb198-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Ojo! Acá es importante que hayamos usado droplevels(rse_gene$PrimaryDx)</span></span>
-<span id="cb198-2"><a href="revisión.html#cb198-2" aria-hidden="true" tabindex="-1"></a><span class="do">## si no, vamos a tener un modelo que no sea _full rank_</span></span>
-<span id="cb198-3"><a href="revisión.html#cb198-3" aria-hidden="true" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="fu">with</span>(</span>
-<span id="cb198-4"><a href="revisión.html#cb198-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">colData</span>(rse_gene),</span>
-<span id="cb198-5"><a href="revisión.html#cb198-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">model.matrix</span>(<span class="sc">~</span> PrimaryDx <span class="sc">+</span> totalAssignedGene <span class="sc">+</span> mitoRate <span class="sc">+</span> rRNA_rate <span class="sc">+</span> BrainRegion <span class="sc">+</span> Sex <span class="sc">+</span> AgeDeath)</span>
-<span id="cb198-6"><a href="revisión.html#cb198-6" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb198-7"><a href="revisión.html#cb198-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb198-8"><a href="revisión.html#cb198-8" aria-hidden="true" tabindex="-1"></a><span class="do">## Exploremos el modelo de forma interactiva</span></span>
-<span id="cb198-9"><a href="revisión.html#cb198-9" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">interactive</span>()) {</span>
-<span id="cb198-10"><a href="revisión.html#cb198-10" aria-hidden="true" tabindex="-1"></a>    <span class="do">## Tenemos que eliminar columnas que tienen NAs.</span></span>
-<span id="cb198-11"><a href="revisión.html#cb198-11" aria-hidden="true" tabindex="-1"></a>    info_no_NAs <span class="ot">&lt;-</span> <span class="fu">colData</span>(rse_gene)[, <span class="fu">c</span>(</span>
-<span id="cb198-12"><a href="revisión.html#cb198-12" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;PrimaryDx&quot;</span>, <span class="st">&quot;totalAssignedGene&quot;</span>, <span class="st">&quot;rRNA_rate&quot;</span>, <span class="st">&quot;BrainRegion&quot;</span>, <span class="st">&quot;Sex&quot;</span>,</span>
-<span id="cb198-13"><a href="revisión.html#cb198-13" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;AgeDeath&quot;</span>, <span class="st">&quot;mitoRate&quot;</span>, <span class="st">&quot;Race&quot;</span></span>
-<span id="cb198-14"><a href="revisión.html#cb198-14" aria-hidden="true" tabindex="-1"></a>    )]</span>
-<span id="cb198-15"><a href="revisión.html#cb198-15" aria-hidden="true" tabindex="-1"></a>    ExploreModelMatrix<span class="sc">::</span><span class="fu">ExploreModelMatrix</span>(</span>
-<span id="cb198-16"><a href="revisión.html#cb198-16" aria-hidden="true" tabindex="-1"></a>        info_no_NAs,</span>
-<span id="cb198-17"><a href="revisión.html#cb198-17" aria-hidden="true" tabindex="-1"></a>        <span class="sc">~</span> PrimaryDx <span class="sc">+</span> totalAssignedGene <span class="sc">+</span> mitoRate <span class="sc">+</span> rRNA_rate <span class="sc">+</span> BrainRegion <span class="sc">+</span> Sex <span class="sc">+</span> AgeDeath</span>
-<span id="cb198-18"><a href="revisión.html#cb198-18" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb198-19"><a href="revisión.html#cb198-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb198-20"><a href="revisión.html#cb198-20" aria-hidden="true" tabindex="-1"></a>    <span class="do">## Veamos un modelo más sencillo sin las variables numéricas (continuas) porque</span></span>
-<span id="cb198-21"><a href="revisión.html#cb198-21" aria-hidden="true" tabindex="-1"></a>    <span class="do">## ExploreModelMatrix nos las muestra como si fueran factors (categoricas)</span></span>
-<span id="cb198-22"><a href="revisión.html#cb198-22" aria-hidden="true" tabindex="-1"></a>    <span class="do">## en vez de continuas</span></span>
-<span id="cb198-23"><a href="revisión.html#cb198-23" aria-hidden="true" tabindex="-1"></a>    ExploreModelMatrix<span class="sc">::</span><span class="fu">ExploreModelMatrix</span>(</span>
-<span id="cb198-24"><a href="revisión.html#cb198-24" aria-hidden="true" tabindex="-1"></a>        info_no_NAs,</span>
-<span id="cb198-25"><a href="revisión.html#cb198-25" aria-hidden="true" tabindex="-1"></a>        <span class="sc">~</span> PrimaryDx <span class="sc">+</span> BrainRegion <span class="sc">+</span> Sex</span>
-<span id="cb198-26"><a href="revisión.html#cb198-26" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb198-27"><a href="revisión.html#cb198-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb198-28"><a href="revisión.html#cb198-28" aria-hidden="true" tabindex="-1"></a>    <span class="do">## Si agregamos + Race nos da errores porque Race solo tiene 1 opción</span></span>
-<span id="cb198-29"><a href="revisión.html#cb198-29" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ExploreModelMatrix::ExploreModelMatrix(</span></span>
-<span id="cb198-30"><a href="revisión.html#cb198-30" aria-hidden="true" tabindex="-1"></a>    <span class="co">#     info_no_NAs,</span></span>
-<span id="cb198-31"><a href="revisión.html#cb198-31" aria-hidden="true" tabindex="-1"></a>    <span class="co">#     ~ PrimaryDx + BrainRegion + Sex + Race</span></span>
-<span id="cb198-32"><a href="revisión.html#cb198-32" aria-hidden="true" tabindex="-1"></a>    <span class="co"># )</span></span>
-<span id="cb198-33"><a href="revisión.html#cb198-33" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="revisión.html#cb199-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Ojo! Acá es importante que hayamos usado droplevels(rse_gene$PrimaryDx)</span></span>
+<span id="cb199-2"><a href="revisión.html#cb199-2" aria-hidden="true" tabindex="-1"></a><span class="do">## si no, vamos a tener un modelo que no sea _full rank_</span></span>
+<span id="cb199-3"><a href="revisión.html#cb199-3" aria-hidden="true" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="fu">with</span>(</span>
+<span id="cb199-4"><a href="revisión.html#cb199-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">colData</span>(rse_gene),</span>
+<span id="cb199-5"><a href="revisión.html#cb199-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">model.matrix</span>(<span class="sc">~</span> PrimaryDx <span class="sc">+</span> totalAssignedGene <span class="sc">+</span> mitoRate <span class="sc">+</span> rRNA_rate <span class="sc">+</span> BrainRegion <span class="sc">+</span> Sex <span class="sc">+</span> AgeDeath)</span>
+<span id="cb199-6"><a href="revisión.html#cb199-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb199-7"><a href="revisión.html#cb199-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb199-8"><a href="revisión.html#cb199-8" aria-hidden="true" tabindex="-1"></a><span class="do">## Exploremos el modelo de forma interactiva</span></span>
+<span id="cb199-9"><a href="revisión.html#cb199-9" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">interactive</span>()) {</span>
+<span id="cb199-10"><a href="revisión.html#cb199-10" aria-hidden="true" tabindex="-1"></a>    <span class="do">## Tenemos que eliminar columnas que tienen NAs.</span></span>
+<span id="cb199-11"><a href="revisión.html#cb199-11" aria-hidden="true" tabindex="-1"></a>    info_no_NAs <span class="ot">&lt;-</span> <span class="fu">colData</span>(rse_gene)[, <span class="fu">c</span>(</span>
+<span id="cb199-12"><a href="revisión.html#cb199-12" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;PrimaryDx&quot;</span>, <span class="st">&quot;totalAssignedGene&quot;</span>, <span class="st">&quot;rRNA_rate&quot;</span>, <span class="st">&quot;BrainRegion&quot;</span>, <span class="st">&quot;Sex&quot;</span>,</span>
+<span id="cb199-13"><a href="revisión.html#cb199-13" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;AgeDeath&quot;</span>, <span class="st">&quot;mitoRate&quot;</span>, <span class="st">&quot;Race&quot;</span></span>
+<span id="cb199-14"><a href="revisión.html#cb199-14" aria-hidden="true" tabindex="-1"></a>    )]</span>
+<span id="cb199-15"><a href="revisión.html#cb199-15" aria-hidden="true" tabindex="-1"></a>    ExploreModelMatrix<span class="sc">::</span><span class="fu">ExploreModelMatrix</span>(</span>
+<span id="cb199-16"><a href="revisión.html#cb199-16" aria-hidden="true" tabindex="-1"></a>        info_no_NAs,</span>
+<span id="cb199-17"><a href="revisión.html#cb199-17" aria-hidden="true" tabindex="-1"></a>        <span class="sc">~</span> PrimaryDx <span class="sc">+</span> totalAssignedGene <span class="sc">+</span> mitoRate <span class="sc">+</span> rRNA_rate <span class="sc">+</span> BrainRegion <span class="sc">+</span> Sex <span class="sc">+</span> AgeDeath</span>
+<span id="cb199-18"><a href="revisión.html#cb199-18" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb199-19"><a href="revisión.html#cb199-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb199-20"><a href="revisión.html#cb199-20" aria-hidden="true" tabindex="-1"></a>    <span class="do">## Veamos un modelo más sencillo sin las variables numéricas (continuas) porque</span></span>
+<span id="cb199-21"><a href="revisión.html#cb199-21" aria-hidden="true" tabindex="-1"></a>    <span class="do">## ExploreModelMatrix nos las muestra como si fueran factors (categoricas)</span></span>
+<span id="cb199-22"><a href="revisión.html#cb199-22" aria-hidden="true" tabindex="-1"></a>    <span class="do">## en vez de continuas</span></span>
+<span id="cb199-23"><a href="revisión.html#cb199-23" aria-hidden="true" tabindex="-1"></a>    ExploreModelMatrix<span class="sc">::</span><span class="fu">ExploreModelMatrix</span>(</span>
+<span id="cb199-24"><a href="revisión.html#cb199-24" aria-hidden="true" tabindex="-1"></a>        info_no_NAs,</span>
+<span id="cb199-25"><a href="revisión.html#cb199-25" aria-hidden="true" tabindex="-1"></a>        <span class="sc">~</span> PrimaryDx <span class="sc">+</span> BrainRegion <span class="sc">+</span> Sex</span>
+<span id="cb199-26"><a href="revisión.html#cb199-26" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb199-27"><a href="revisión.html#cb199-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb199-28"><a href="revisión.html#cb199-28" aria-hidden="true" tabindex="-1"></a>    <span class="do">## Si agregamos + Race nos da errores porque Race solo tiene 1 opción</span></span>
+<span id="cb199-29"><a href="revisión.html#cb199-29" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ExploreModelMatrix::ExploreModelMatrix(</span></span>
+<span id="cb199-30"><a href="revisión.html#cb199-30" aria-hidden="true" tabindex="-1"></a>    <span class="co">#     info_no_NAs,</span></span>
+<span id="cb199-31"><a href="revisión.html#cb199-31" aria-hidden="true" tabindex="-1"></a>    <span class="co">#     ~ PrimaryDx + BrainRegion + Sex + Race</span></span>
+<span id="cb199-32"><a href="revisión.html#cb199-32" aria-hidden="true" tabindex="-1"></a>    <span class="co"># )</span></span>
+<span id="cb199-33"><a href="revisión.html#cb199-33" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p>¿Quieres más datos? Tenemos muchos en LIBD incluyendo <a href="http://eqtl.brainseq.org/phase2/" class="uri">http://eqtl.brainseq.org/phase2/</a>.</p>
 </div>
 </div>
