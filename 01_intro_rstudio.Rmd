@@ -131,6 +131,12 @@ options(width = 120)
 sessioninfo::session_info()
 ```
 
+* Un video de mi club de R sobre RStudio y el uso de `here`:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/XTuJ8vGnzBU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+También hay videos en el [canal de YouTube de la CDSB](https://www.youtube.com/channel/UCHCdYfAXVzJIUkMoMSGiZMw) sobre `here` como pueden ver [aquí](https://www.youtube.com/channel/UCHCdYfAXVzJIUkMoMSGiZMw/search?query=here).
+
 * Para una guía más detallada de cómo organizar tus archivos, revisa https://lcolladotor.github.io/bioc_team_ds/organizing-your-work.html#.YflDV-rMJD8. 
 
 * Configura `usethis` con GitHub vía https://usethis.r-lib.org/articles/articles/git-credentials.html
