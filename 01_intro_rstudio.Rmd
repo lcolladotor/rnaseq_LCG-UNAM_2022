@@ -93,10 +93,10 @@ usethis::create_project("~/rnaseq_2022_notas")
 usethis::use_r("01-notas.R")
 ```
 
-O por ejemplo el archivo [01-visualizar-mtcars.R](https://github.com/lcolladotor/rnaseq_2021_notas_en_vivo/blob/master/R/01-visualizar-mtcars.R)
+O por ejemplo el archivo [02-visualizar-mtcars.R](https://github.com/lcolladotor/rnaseq_2022_notas_envivo/blob/master/R/02-visualizar-mtcars.R)
 
 ```{r create_01-visualizar-mtcars, eval = FALSE}
-## Creemos el archivo R/01-visualizar-mtcars.R
+## Creemos el archivo R/02-visualizar-mtcars.R
 usethis::use_r("02-visualizar-mtcars.R")
 ```
 
