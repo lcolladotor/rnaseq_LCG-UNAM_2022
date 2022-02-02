@@ -18,7 +18,7 @@ isee
 ejercicio-con-spatiallibd
 comunidad-1
 datos-de-rna-seq-a-través-de-recount3
-procesar-datos-crudos-fastq
+procesar-datos-crudos-fastq-con-speaqeasy
 proyectos-recount
 usar-recount3
 ejercicio-1
@@ -43,4 +43,5 @@ ejercicio-en-equipo
 respuestas
 spatiallibd
 comunidad-4
+de-alumnos-lcg-2021
 de-ustedes
