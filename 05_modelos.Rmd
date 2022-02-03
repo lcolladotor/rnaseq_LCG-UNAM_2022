@@ -341,12 +341,34 @@ Algunxs de lxs autores de `edgeR` y `limma`:
 ## Tenemos que usar gene_id y gene_name
 rowRanges(rse_gene_SRP045638)
 
+## Alternativamente, podriamos haber usado de_results
+head(de_results, n = 3)
+
+## Es la misma información
+identical(rowRanges(rse_gene_SRP045638)$gene_id, de_results$gene_id)
+identical(rowRanges(rse_gene_SRP045638)$gene_name, de_results$gene_name)
+
+## Guardemos los IDs de nuestros 50 genes
+nombres_originales <- rownames(exprs_heatmap)
+
 ## Con match() podemos encontrar cual es cual
 rownames(exprs_heatmap) <- rowRanges(rse_gene_SRP045638)$gene_name[
     match(rownames(exprs_heatmap), rowRanges(rse_gene_SRP045638)$gene_id)
 ]
 
-## Y luego podemos cambiar el valor de show_rownames de FALSE a TRUE
+## Vean que tambien podriamos haber usado rank()
+identical(
+    which(rank(de_results$adj.P.Val) <= 50),
+    match(nombres_originales, rowRanges(rse_gene_SRP045638)$gene_id)
+)
+
+## Esta es otra solución
+identical(
+    de_results$gene_name[rank(de_results$adj.P.Val) <= 50],
+    rownames(exprs_heatmap)
+)
+
+## Por último podemos cambiar el valor de show_rownames de FALSE a TRUE
 pheatmap(
     exprs_heatmap,
     cluster_rows = TRUE,
