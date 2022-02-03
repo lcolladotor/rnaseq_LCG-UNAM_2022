@@ -56,8 +56,8 @@ _Local times in Cuernavaca, Mexico_
   - 9-11 am: statistical models with `r BiocStyle::Biocpkg("ExploreModelMatrix")`
   - 12-2 pm: differential expression analysis with `r BiocStyle::Biocpkg("limma")`
 * Friday February 4:
-  - 9-11 am: Review session
-  - 12-2 pm: spatial transcriptomics with `r BiocStyle::Biocpkg("spatialLIBD")` + open discussion (career paths, networking, etc)
+  - 9-12 am: Review session + spatial transcriptomics with `r BiocStyle::Biocpkg("spatialLIBD")`
+  - 1-2 pm: open discussion (career paths, networking, etc)
   
 ## External links {-}
 
