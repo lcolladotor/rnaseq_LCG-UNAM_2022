@@ -26,7 +26,7 @@ Instructor:
 Teach assistants:
 
 * [Elisa Márquez Zavala](https://github.com/emarquezz)
-* [Valeria Erendira Mateo Estrada](https://www.ibt.unam.mx/perfil/2717/valeria-erendira-mateo-estrada)
+* [Valeria Erendira Mateo Estrada](https://github.com/valeriamateo)
 
 
 Course Coordinators:
