@@ -144,7 +144,7 @@ Ahora crearemos un par de variables para que las podamos usar en nuestro anális
 rse_gene_SRP045638$prenatal <- factor(ifelse(rse_gene_SRP045638$sra_attribute.age < 0, "prenatal", "postnatal"))
 table(rse_gene_SRP045638$prenatal)
 
-## http://research.libd.org/recount3-docs/docs/quality-check-fields.html
+## http://rna.recount.bio/docs/quality-check-fields.html
 rse_gene_SRP045638$assigned_gene_prop <- rse_gene_SRP045638$recount_qc.gene_fc_count_all.assigned / rse_gene_SRP045638$recount_qc.gene_fc_count_all.total
 summary(rse_gene_SRP045638$assigned_gene_prop)
 with(colData(rse_gene_SRP045638), plot(assigned_gene_prop, sra_attribute.RIN))
