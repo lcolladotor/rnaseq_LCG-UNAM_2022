@@ -1,4 +1,4 @@
-## ----"speaqeasy_data"-----------------------------------------
+## ----"speaqeasy_data"---------------------------------------------------------
 speaqeasy_data <- file.path(tempdir(), "rse_speaqeasy.RData")
 download.file("https://github.com/LieberInstitute/SPEAQeasy-example/blob/master/rse_speaqeasy.RData?raw=true", speaqeasy_data, mode = "wb")
 library("SummarizedExperiment")
@@ -6,7 +6,7 @@ load(speaqeasy_data, verbose = TRUE)
 rse_gene
 
 
-## ----"respuestas"---------------------------------------------
+## ----"respuestas"-------------------------------------------------------------
 ## Exploremos la variable de PrimaryDx
 table(rse_gene$PrimaryDx)
 ## Eliminemos el diagnosis "Other" porque no tiene información
@@ -34,9 +34,26 @@ ggplot(
     geom_boxplot() +
     theme_bw(base_size = 20) +
     xlab("Diagnosis")
+
+ggplot(
+    as.data.frame(colData(rse_gene)),
+    aes(y = totalAssignedGene, group = paste0(PrimaryDx, "_", BrainRegion), x = paste0(PrimaryDx, "_", BrainRegion))
+) +
+    geom_boxplot() +
+    theme_bw(base_size = 20) +
+    xlab("Diagnosis")
+
 ggplot(
     as.data.frame(colData(rse_gene)),
     aes(y = mitoRate, group = PrimaryDx, x = PrimaryDx)
+) +
+    geom_boxplot() +
+    theme_bw(base_size = 20) +
+    xlab("Diagnosis")
+
+ggplot(
+    as.data.frame(colData(rse_gene)),
+    aes(y = mitoRate, group = paste0(PrimaryDx, "_", BrainRegion), x = paste0(PrimaryDx, "_", BrainRegion))
 ) +
     geom_boxplot() +
     theme_bw(base_size = 20) +

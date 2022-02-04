@@ -52,9 +52,26 @@ ggplot(
     geom_boxplot() +
     theme_bw(base_size = 20) +
     xlab("Diagnosis")
+
+ggplot(
+    as.data.frame(colData(rse_gene)),
+    aes(y = totalAssignedGene, group = paste0(PrimaryDx, "_", BrainRegion), x = paste0(PrimaryDx, "_", BrainRegion))
+) +
+    geom_boxplot() +
+    theme_bw(base_size = 20) +
+    xlab("Diagnosis")
+
 ggplot(
     as.data.frame(colData(rse_gene)),
     aes(y = mitoRate, group = PrimaryDx, x = PrimaryDx)
+) +
+    geom_boxplot() +
+    theme_bw(base_size = 20) +
+    xlab("Diagnosis")
+
+ggplot(
+    as.data.frame(colData(rse_gene)),
+    aes(y = mitoRate, group = paste0(PrimaryDx, "_", BrainRegion), x = paste0(PrimaryDx, "_", BrainRegion))
 ) +
     geom_boxplot() +
     theme_bw(base_size = 20) +
