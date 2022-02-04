@@ -115,6 +115,27 @@ scater::plotExpression(
     xlab = "Diagnosis"
 )
 
+if (requireNamespace("plotly", quietly = TRUE)) {
+    ## Lo pueden instalar con
+    # install.packages("plotly")
+
+    ## Guardemos el resultado de plotExpression()
+    p <- scater::plotExpression(
+        as(rse_gene, "SingleCellExperiment"),
+        features = rownames(rse_gene)[i],
+        x = "PrimaryDx",
+        exprs_values = "counts",
+        colour_by = "BrainRegion",
+        xlab = "Diagnosis"
+    )
+    ## scater::plotExpression() regresa un objeto de clase ggplot
+    class(p)
+
+    ## así que podemos usar plotly para crear una versión
+    ## interactiva
+    plotly::ggplotly(p)
+}
+
 ## Para el model estadístico exploremos la información de las muestras
 colnames(colData(rse_gene))
 
